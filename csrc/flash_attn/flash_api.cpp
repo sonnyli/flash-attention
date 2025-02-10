@@ -438,7 +438,8 @@ mha_fwd(at::Tensor &q,         // batch_size x seqlen_q x num_heads x round_mult
 
     auto opts = q.options();
 
-    auto softmax_lse = torch::empty({batch_size, num_heads, seqlen_q}, opts.dtype(at::kFloat));
+    // auto softmax_lse = torch::empty({batch_size, num_heads, seqlen_q}, opts.dtype(at::kFloat));
+    auto softmax_lse = torch::empty({0});
     at::Tensor p;
     // Only return softmax if there's dropout to reduce compilation time
     if (return_softmax) {
