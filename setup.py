@@ -47,7 +47,7 @@ else:
     elif BUILD_TARGET == "rocm":
         IS_ROCM = True
 
-PACKAGE_NAME = "flash_attn"
+PACKAGE_NAME = "flash_attn_v2"
 
 BASE_WHEEL_URL = "https://github.com/Dao-AILab/flash-attention/releases/download/{tag_name}/{wheel_name}"
 
