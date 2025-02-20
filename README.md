@@ -44,7 +44,7 @@ Currently released:
 
 Requirements: H100 / H800 GPU, CUDA >= 12.3.
 
-For now, we highly recommend CUDA 12.3 for best performance.
+We highly recommend CUDA 12.8 for best performance.
 
 To install:
 ```sh
@@ -65,7 +65,7 @@ flash_attn_interface.flash_attn_func()
 ## Installation and features
 **Requirements:**
 - CUDA toolkit or ROCm toolkit
-- PyTorch 2.1 and above.
+- PyTorch 2.2 and above.
 - `packaging` Python package (`pip install packaging`)
 - `ninja` Python package (`pip install ninja`) *
 - Linux. Might work for Windows starting v2.3.2 (we've seen a few positive [reports](https://github.com/Dao-AILab/flash-attention/issues/595)) but Windows compilation still requires more testing. If you have ideas on how to set up prebuilt CUDA wheels for Windows, please reach out via Github issue.
