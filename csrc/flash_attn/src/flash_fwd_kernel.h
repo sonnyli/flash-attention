@@ -78,7 +78,6 @@ inline __device__ void compute_attn_1rowblock(const Params &params, const int bi
     }
 
     const BlockInfo</*Varlen=*/!Is_even_MN> binfo(params, bidb);
-    if (m_block * kBlockM >= binfo.actual_seqlen_q) return;
 
     const int n_block_min = !Is_local ? 0 : std::max(0, (m_block * kBlockM + binfo.actual_seqlen_k - binfo.actual_seqlen_q - params.window_size_left) / kBlockN);
     int n_block_max = cute::ceil_div(binfo.actual_seqlen_k, kBlockN);

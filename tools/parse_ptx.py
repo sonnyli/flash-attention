@@ -374,6 +374,7 @@ def format_kernel_function(kernel, index):
     output.append(f"  Used barriers         : {kernel.used_barriers}")
     output.append(f"  cmem[0] (bytes)       : {kernel.cmem_bytes}")
     output.append(f"  Compile time (ms)     : {kernel.compile_time_ms}")
+    output.append(f"  Stack frame (bytes)   : {kernel.stack_frame_bytes}")
 
     # Only include spill info if there are spills
     if kernel.has_spills():
@@ -528,6 +529,8 @@ def main():
 
         # Print kernel info in the desired format
         for i, (_, kernel) in enumerate(kernel_functions.items(), 1):
+            if kernel.is_causal:
+                continue
             print(format_kernel_function(kernel, i))
             print()  # Empty line between functions
 

@@ -186,12 +186,6 @@ if not SKIP_CUDA_BUILD and not IS_ROCM:
     if "80" in cuda_archs():
         cc_flag.append("-gencode")
         cc_flag.append("arch=compute_80,code=sm_80")
-    if "86" in cuda_archs():
-        cc_flag.append("-gencode")
-        cc_flag.append("arch=compute_86,code=sm_86")
-    if "89" in cuda_archs():
-        cc_flag.append("-gencode")
-        cc_flag.append("arch=compute_89,code=sm_89")
     if CUDA_HOME is not None:
         if bare_metal_version >= Version("11.8") and "90" in cuda_archs():
             cc_flag.append("-gencode")
